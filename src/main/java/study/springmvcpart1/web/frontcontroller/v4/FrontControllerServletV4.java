@@ -17,7 +17,7 @@ import java.util.Map;
 @WebServlet(name = "frontControllerServletV4", urlPatterns = "/front-controller/v4/*")
 public class FrontControllerServletV4 extends HttpServlet {
 
-    Map<String, ControllerV4> collectionMap = new HashMap<>();
+    private Map<String, ControllerV4> collectionMap = new HashMap<>();
 
     public FrontControllerServletV4() {
         collectionMap.put("/front-controller/v4/members/new-form", new MemberFormControllerV4());
