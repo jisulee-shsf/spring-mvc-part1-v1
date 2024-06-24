@@ -34,7 +34,7 @@ public class FrontControllerServletV3 extends HttpServlet {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         } else {
-            Map<String, String> parameterMap = creatParameterMap(request);
+            Map<String, String> parameterMap = createParameterMap(request);
             ModelView modelView = controller.process(parameterMap);
 
             String viewName = modelView.getViewName();
@@ -47,7 +47,7 @@ public class FrontControllerServletV3 extends HttpServlet {
         return new MyView("/WEB-INF/views/" + viewName + ".jsp");
     }
 
-    private Map<String, String> creatParameterMap(HttpServletRequest request) {
+    private Map<String, String> createParameterMap(HttpServletRequest request) {
         Map<String, String> parameterMap = new HashMap<>();
         request.getParameterNames().asIterator()
                 .forEachRemaining(parameterName -> parameterMap.put(parameterName, request.getParameter(parameterName)));

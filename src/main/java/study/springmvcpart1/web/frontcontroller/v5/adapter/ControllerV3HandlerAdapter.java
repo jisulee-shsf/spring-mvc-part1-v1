@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import study.springmvcpart1.web.frontcontroller.ModelView;
 import study.springmvcpart1.web.frontcontroller.v3.ControllerV3;
+import study.springmvcpart1.web.frontcontroller.v3.controller.MemberListControllerV3;
 import study.springmvcpart1.web.frontcontroller.v5.MyHandlerAdapter;
 
 import java.io.IOException;
@@ -14,12 +15,12 @@ import java.util.Map;
 public class ControllerV3HandlerAdapter implements MyHandlerAdapter {
 
     @Override
-    public boolean suports(Object handler) {
-        return (handler instanceof ControllerV3);
+    public boolean supports(Object handler) {
+        return (handler instanceof MemberListControllerV3);
     }
 
     @Override
-    public ModelView handler(HttpServletRequest request, HttpServletResponse response, Object handler) throws ServletException, IOException {
+    public ModelView handle(HttpServletRequest request, HttpServletResponse response, Object handler) throws ServletException, IOException {
         ControllerV3 controller = (ControllerV3) handler;
 
         Map<String, String> parameterMap = createParameterMap(request);

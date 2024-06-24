@@ -56,7 +56,7 @@ public class FrontControllerServletV5 extends HttpServlet {
             return;
         } else {
             MyHandlerAdapter adapter = getHandlerAdapter(handler);
-            ModelView modelView = adapter.handler(request, response, handler);
+            ModelView modelView = adapter.handle(request, response, handler);
 
             String viewName = modelView.getViewName();
             MyView myView = viewResolver(viewName);
@@ -70,7 +70,7 @@ public class FrontControllerServletV5 extends HttpServlet {
 
     private MyHandlerAdapter getHandlerAdapter(Object handler) {
         for (MyHandlerAdapter adapter : handlerAdapters) {
-            if (adapter.suports(handler)) {
+            if (adapter.supports(handler)) {
                 return adapter;
             }
         }

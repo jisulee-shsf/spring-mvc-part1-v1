@@ -13,12 +13,12 @@ import java.util.Map;
 
 public class ControllerV4HandlerAdapter implements MyHandlerAdapter {
     @Override
-    public boolean suports(Object handler) {
+    public boolean supports(Object handler) {
         return (handler instanceof ControllerV4);
     }
 
     @Override
-    public ModelView handler(HttpServletRequest request, HttpServletResponse response, Object handler) throws ServletException, IOException {
+    public ModelView handle(HttpServletRequest request, HttpServletResponse response, Object handler) throws ServletException, IOException {
         ControllerV4 controller = (ControllerV4) handler;
 
         Map<String, String> parameterMap = createParameterMap(request);
