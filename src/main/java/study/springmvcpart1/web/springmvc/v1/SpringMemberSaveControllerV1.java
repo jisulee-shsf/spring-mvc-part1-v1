@@ -9,7 +9,7 @@ import study.springmvcpart1.domain.Member;
 import study.springmvcpart1.domain.MemberRepository;
 
 @Controller
-public class SpringSaveMemberControllerV1 {
+public class SpringMemberSaveControllerV1 {
 
     private MemberRepository memberRepository = MemberRepository.getInstance();
 
